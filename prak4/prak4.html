@@ -1,0 +1,46 @@
+//Ihsan Triyadi
+//121140163
+//Praktikum RC
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Bilangan Ganjil dan Genap</title>
+</head>
+<body>
+    <h1>Hitung Bilangan Ganjil dan Genap</h1>
+    <p>Masukkan bilangan bulat positif:</p>
+    <input type="number" id="inputNumber">
+    <button onclick="hitungGanjilGenap()">Hitung</button>
+    <p>Hasil:</p>
+    <span id="result"></span>
+
+    <script>
+        function hitungGanjilGenap() {
+            
+            var inputNumber = parseInt(document.getElementById("inputNumber").value);
+            if (inputNumber < 1) {
+                alert("Masukkan bilangan bulat positif!");
+                return;
+            }
+
+            var jumlahGanjil = 0;
+            var jumlahGenap = 0;
+
+         
+            for (var i = 1; i <= inputNumber; i++) {
+                if (i % 2 === 0) {
+                    jumlahGenap++;
+                } else {
+                    jumlahGanjil++;
+                }
+            }
+
+         
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Jumlah bilangan ganjil: " + jumlahGanjil + "<br>Jumlah bilangan genap: " + jumlahGenap;
+        }
+    </script>
+</body>
+</html>
